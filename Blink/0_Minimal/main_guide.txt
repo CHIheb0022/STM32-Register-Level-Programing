@@ -1,0 +1,20 @@
+STM32L476RG Bare-metal LED Blinking - Main Steps:
+
+1-Define Peripheral base addresses
+RCC Base: 0x40021000UL
+GPIOA Base: 0x48000000UL
+
+2-Registers addresses using offset (RCC & GPIOA Registers)
+RCC_AHB2ENR: Enable GPIOA clock
+GPIOA_MODER & GPIOA_ODR: Control GPIOA behavior & output data
+
+3-Set Up GPIOA:
+Enable clock for GPIOA
+Set PA5 as output
+
+4-Toggle LED on PA5 in Infinite Loop:
+Set & clear GPIOA_ODR
+Delay between toggles
+
+5-Delay Function:
+Simple delay with for loop 
